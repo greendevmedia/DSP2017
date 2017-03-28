@@ -3,6 +3,7 @@ package in.greendev.dsp2017.model.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.sendRedirect("/schedule-calendar/index.jsp");
+		response.sendRedirect("/schedule-calendar/");
 	}
 
 
@@ -46,11 +47,15 @@ public class RegistrationServlet extends HttpServlet {
 		if (clientsList.size() == 0) {
 			entityManagerAccess.saveInDB(client);
 			System.out.println("Użytkownik zapisany");
-			doGet(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("clientView.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			System.out.println("Liczba takich adresów w bazie: " + clientsList.size());
 			System.out.println("wpisz inny adres");
-			doGet(request, response);
+			request.setAttribute("firstName", firstName);
+			request.setAttribute("lastName", lastName);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("wrongEmail.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 
