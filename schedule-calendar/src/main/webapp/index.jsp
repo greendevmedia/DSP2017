@@ -52,12 +52,10 @@
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
-
-
-
 		</form>
 	</div>
 	<div class="col-sm-4">
+		<h2>Log In</h2>
 		<form data-toggle="validator" role="form" method="post"
 			action="LogInServlet">
 			<div class="form-group">
@@ -67,8 +65,8 @@
 				<div class="help-block with-errors"></div>
 			</div>
 			<div class="form-group">
-
-				<input type="password" data-minlength="6" class="form-control"
+				<label for="password" class="control-label">Password</label> <input
+					type="password" data-minlength="6" class="form-control"
 					name="password" id="password" placeholder="Password" required>
 				<div class="help-block">Minimum of 6 characters</div>
 

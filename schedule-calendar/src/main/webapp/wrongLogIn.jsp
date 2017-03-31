@@ -11,7 +11,7 @@
 				<div class="help-block with-errors"></div>
 			</div>
 			<div class="form-group">
-				
+				<label for="password" class="control-label">Password</label>
 					<input type="password" data-minlength="6" class="form-control"
 						name="password" id="password" placeholder="Password" required>
 					<div class="help-block">Minimum of 6 characters</div>
