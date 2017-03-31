@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>in.greendev.dsp2017.model.controller.RegistrationServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogInServlet</servlet-name>
+  	<display-name>LogInServlet</display-name>
+  	<description></description>
+  	<servlet-class>in.greendev.dsp2017.model.controller.LogInServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationServlet</servlet-name>
   	<url-pattern>/RegistrationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogInServlet</servlet-name>
+  	<url-pattern>/LogInServlet</url-pattern>
   </servlet-mapping>
 </web-app>
