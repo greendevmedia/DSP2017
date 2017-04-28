@@ -22,5 +22,3 @@
 <!-- bootstrap validator -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-<title>Schedule Calendar</title>
-</head>

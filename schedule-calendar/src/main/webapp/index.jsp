@@ -1,7 +1,14 @@
 <%@ include file="../jspf/head.jsp"%>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id"
+	content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<title>Schedule Calendar</title>
+</head>
 <body>
-	<h2>Registration Form</h2>
-	<div class="col-sm-8">
+
+	<div class="col-sm-4">
+		<h2>Registration Form</h2>
 		<form data-toggle="validator" role="form" method="post"
 			action="RegistrationServlet">
 			<div class="form-group">
@@ -77,5 +84,20 @@
 		</form>
 
 	</div>
+	<div class="col-sm-4">
+		<h2>Log in with Google</h2>
+		<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+		<script>
+			function onSignIn(googleUser) {
+			
+
+				// The ID token you need to pass to your backend:
+				var id_token = googleUser.getAuthResponse().id_token;
+				console.log("ID Token: " + id_token);
+			};
+		</script>
+
+	</div>
+
 </body>
 </html>
