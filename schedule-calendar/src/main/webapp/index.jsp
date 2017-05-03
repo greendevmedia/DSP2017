@@ -1,7 +1,7 @@
 <%@ include file="../jspf/head.jsp"%>
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id"
-	content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+	content="Client_ID">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <title>Schedule Calendar</title>
 </head>
@@ -94,6 +94,14 @@
 				// The ID token you need to pass to your backend:
 				var id_token = googleUser.getAuthResponse().id_token;
 				console.log("ID Token: " + id_token);
+				
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'https://localhost:8443/schedule-calendar/GoogleLogInServlet');
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.onload = function() {
+				  console.log('Signed in as: ' + xhr.responseText);
+				};
+				xhr.send('idtoken=' + id_token);
 			};
 		</script>
 
